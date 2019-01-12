@@ -36,7 +36,7 @@ languageFilter = {
 }
 
 # CNNPolitics, HuffPost, nytpolitics
-USERS = ['13850422', '15458694', '14434063']
+USERS = ['13850422', '15458694', '14434063', '9300262']
 base_status_url = "https://twitter.com/$user/status/"
 
 """
@@ -47,18 +47,6 @@ def jargonify():
         jargonTweet = jargonifyTweet(tweet['text']) + " - " + getOriginalURL(tweet['user']['screen_name'], tweet['id'])
         api.PostUpdate(jargonTweet)
         print("NEW TWEET POSTED: " + jargonTweet)
-
-
-"""
-Load tweets from a user's timeline and replace their content
-"""
-#def pullData(user):
-    # Load tweets from CNN
-   # timeline = api.GetUserTimeline(screen_name=user, count=5)
-
-    # Go through their tweets
-    #for tweet in timeline:
-        #api.PostUpdate(jargonifyTweet(tweet.text) + getOriginalURL(tweet.id))
 
 """
 Turn a tweet into jargon word by word
